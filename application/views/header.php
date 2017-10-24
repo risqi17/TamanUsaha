@@ -19,7 +19,8 @@
     <link href="<?php echo base_url(); ?>assets/css/mdb.min.css" rel="stylesheet">
 
     <link href="<?php echo base_url(); ?>assets/css/style.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery-ui-1.12.1/jquery-ui.css" type="text/css" media="all" />  
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery-ui-1.12.1/jquery-ui.theme.css" type="text/   css" media="all" />
      
     <!-- Template styles -->
     <style rel="stylesheet">
@@ -120,58 +121,7 @@
         }
     </style>
 
-        <link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/   css" media="all" />  
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
-    <script>
-            $(function () {
-                $('#id').autocomplete({      
-                    minLength: 1,  
-                    source:'<?php echo base_url()?>/index.php/welcome/suggest_prod'
-//                  source: '<?php echo base_url()?>/index.php/product/suggest_prod',
-    //              minLength    : 1
-                 });  
-            });
-        </script>
-        <script>
-            $(document).ready(function(){
-            var data = ["Boston Celtics", "Chicago Bulls", "Miami Heat", "Orlando Magic", "Atlanta Hawks", "Philadelphia Sixers", "New York Knicks", "Indiana Pacers", "Charlotte Bobcats", "Milwaukee Bucks", "Detroit Pistons", "New Jersey Nets", "Toronto Raptors", "Washington Wizards", "Cleveland Cavaliers"];
-            $("#i").autocomplete({source:data});
-            });
-        </script>
-        <style>                                                                         
-            .box{
-                width: 500px;
-                margin: auto;
-                margin-top: 50px;
-            }
-            .ui-autocomplete {
-                position: absolute;
-                z-index: 1000;
-                cursor: default;
-                padding: 0;
-                margin-top: 2px;
-                list-style: none;
-                background-color: #ffffff;
-                border: 1px solid #ccc;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                border-radius: 5px;
-                -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            }
-            .ui-autocomplete > li {
-                padding: 3px 10px;
-            }
-            .ui-autocomplete > li.ui-state-focus {
-                background-color: #3399FF;
-                color:#ffffff;
-            }
-            .ui-helper-hidden-accessible {
-                display: none;
-            }
-        </style>
+        
 </head>
 
 <body class="rgba-grey-slight">
@@ -194,11 +144,8 @@
                             </a>
                             <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
                             <?php foreach ($cat as $cat){?>
-                                <a class="dropdown-item" href="<?php echo base_url()?>index.php/welcome/pilih_cat?id=<?php echo $cat->CAT_ID?>"><?php echo $cat->CAT_NAME?>
-                                <!--<form action="<?php echo base_url()?>/index.php/product/pilih_cat" method="post">
-                                <input type="hidden" value="<?php echo $cat->CAT_ID?>" name="id">
-                                </form>-->
-                                </a>                              
+                                <a class="dropdown-item" href="<?php echo base_url()?>index.php/welcome/pilih_cat?id=<?php echo $cat->CAT_ID?>&name=<?php echo $cat->CAT_NAME?>"><?php echo $cat->CAT_NAME?>
+                                </a>
                             <?php }?>
                             </div>
                         </li>

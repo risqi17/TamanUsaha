@@ -85,8 +85,27 @@
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.1.1.min.js"></script>
-
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery-3.2.1.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery-ui-1.12.1/jquery-ui.min.js" type="text/javascript"></script>
+            
+        <style>
+            .ui-autocomplete > li.ui-state-focus {
+                background-color: #f5f5f5;
+                color:#ffffff;
+            }
+            .ui-helper-hidden-accessible {
+                display: none;
+            }  
+        </style>  
+        <script>
+            $(function () {
+                $('#id').autocomplete({      
+					minLength: 1,
+					delay: 0,
+					source:'<?php echo base_url()?>/index.php/Welcome/suggest_prod'
+				 });  
+            });
+        </script>
     <!-- Bootstrap dropdown -->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/popper.min.js"></script>
 

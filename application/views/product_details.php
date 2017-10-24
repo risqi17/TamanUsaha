@@ -13,7 +13,7 @@
                         <br>
                         <div class="list-group">
                             <?php foreach ($cat as $cat) { ?>
-                            <a href="<?php echo base_url()?>index.php/welcome/pilih_cat?id=<?php echo $cat->CAT_ID?>" class="list-group-item"><?php echo $cat->CAT_NAME?></a>
+                            <a href="<?php echo base_url()?>index.php/welcome/pilih_cat?id=<?php echo $cat->CAT_ID?>&name=<?php echo $cat->CAT_NAME?>" class="list-group-item"><?php echo $cat->CAT_NAME?></a>
                             <?php } ?>
                         </div>
                     </div>
